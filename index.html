@@ -202,10 +202,10 @@
       </section>
       <!--/ Method. -->
 
+      <!-- Results. -->
       <section class="hero">
          <div class="hero-body">
             <div class="container is-max-desktop">
-               <!-- Abstract. -->
                <div class="columns is-centered has-text-centered">
                   <div class="column is-four-fifths">
                      <h2 class="title is-3">Results</h2>
@@ -247,6 +247,106 @@
                   </div>
                </div>
             </div>
+      <section class="hero">
+         <div class="hero-body">
+            <div class="container is-max-desktop">
+               <div class="columns is-centered has-text-centered">
+                  <div class="column is-four-fifths">
+                     <h2 class="title is-3">Results</h2>
+                     <div class="content has-text-justified">
+                        <center>
+                           <img src="static/images/qualitative_results.png" alt="qualitative_results" border=0 height=200 width=1500 />
+                        </center>
+                        <p class="subtitle has-text-justified">
+                            <b><u>Qualitative Results:</u></b>The original image, the ground truth (GT) mask, all of the SAM generated masks overlayed on top of each other, and U-SAM predicted masks are shown respectively in the four columns. For the GT mask and U-SAM predicted masks, the colors indicate the class labels, while random colors were used for the SAM masks since it does not provide class-labels.
+                           <br>
+                           <br>
+
+                        <center>
+                            <img src="static/images/granularity_change.png" alt="granularity-specific" border=0 height=150
+                                width=1500 />
+                        </center>
+                           <p class="subtitle has-text-justified">
+                            <b><u>Qualitative results with changed granularity:</u></b> The third column shows the U-SAM predictions on PASCAL classes, and the fourth column shows the predictions when the granularity level has been changed to categorize 
+                            <span style="font-style: italic;">"dog"</span>, <span style="font-style: italic;">"cat"</span>, and <span style="font-style: italic;">"sheep"</span> classes as a single 
+                            <span style="font-style: italic;">"animals"</span> class. The colors represent the different class labels: 
+                            <span style="color: brown;">Brown</span>: <span style="font-style: italic;">"sheep"</span>, 
+                            <span style="color: rgb(130, 10, 229);">Violet</span>: <span style="font-style: italic;">"dog"</span>, 
+                            <span style="color: olive;">Dark Brown</span>: <span style="font-style: italic;">"cat"</span>, 
+                            <span style="color: red;">Red</span>: <span style="font-style: italic;">"animals"</span>, 
+                            <span style="color: pink;">Pink</span>: <span style="font-style: italic;">"person"</span>. 
+                            <b><i>GC</i></b>: Granularity Changed.
+                              <br>
+                              <br>
+                        
+                        <center>
+                           <img src="static/images/quantitative_results.png" alt="quant_results" border=0 height=200 width=1500 />
+                        </center>
+                        <p class="subtitle has-text-centered">
+                            <b><u>Quantitative Results</u></b> obtained by U-SAM.
+                           <br>
+                           <br>
+
+                     </div>
+                  </div>
+               </div>
+            </div>
+            
+      <!-- /Results. -->
+       
+      <!-- People. -->
+      <section class="hero">
+         <div class="hero-body">
+            <div class="container is-max-desktop">
+               <div class="columns is-centered has-text-centered">
+                  <div class="column is-four-fifths">
+                     <h2 class="title is-3">Authors</h2>
+                     <div class="columns is-multiline is-centered">
+                        <!-- Author 1 -->
+                        <div class="column is-one-quarter">
+                           <figure class="image is-128x128 is-inline-block">
+                              <a target="_blank" href="https://rohit-kundu.github.io/">
+                              <img class="is-rounded" src="static/authors/rohit.jpg" alt="Rohit Kundu">
+                              </a>
+                           </figure>
+                           <p><b>Rohit Kundu</b></p>
+                           <!-- <p><a href="https://rohit-kundu.github.io/">Website</a></p> -->
+                        </div>
+                        <!-- Author 2 -->
+                        <div class="column is-one-quarter">
+                           <figure class="image is-128x128 is-inline-block">
+                              <a target="_blank" href="https://spaul007.github.io/">
+                              <img class="is-rounded" src="static/authors/sudipta.jpg" alt="Sudipta Paul">
+                              </a>
+                           </figure>
+                           <p><b>Sudipta Paul</b></p>
+                        </div>
+                        <!-- Author 3 -->
+                        <div class="column is-one-quarter">
+                           <figure class="image is-128x128 is-inline-block">
+                              <a target="_blank" href="https://www.linkedin.com/in/arindam-dutta-a07451292/">
+                              <img class="is-rounded" src="static/authors/arindam.jpg" alt="Arindam Dutta">
+                              </a>
+                           </figure>
+                           <p><b>Arindam Dutta</b></p>
+                        </div>
+                        <!-- Author 4 -->
+                        <div class="column is-one-quarter">
+                           <figure class="image is-128x128 is-inline-block">
+                              <a target="_blank" href="https://vcg.ece.ucr.edu/amit">
+                              <img class="is-rounded" src="static/authors/amit.avif" alt="Amit K. Roy-Chowdhury">
+                              </a>
+                           </figure>
+                           <p><b>Amit K. Roy-Chowdhury</b></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+       
+      <!-- BibTeX. -->
             <section class="section" id="BibTeX">
                <div class="container is-max-desktop content">
                   <h2 class="title">BibTeX</h2>
@@ -279,7 +379,9 @@
                });
             </script>
             <br>
+      <!-- /BibTeX. -->
 
+            <!-- Footers. -->
             <p style="text-align:center"> <img
                   src="https://badges.toozhao.com/badges/01HTTX5CCFCP5V35WK5JYTW63R/green.svg" /> </a></p>
 
