@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <style>
+      td,
+      th {
+         border: 0px solid black;
+      }
+
+      img {
+         padding: 5px;
+      }
+   </style>
+   <title>Repurposing SAM for User-Defined Semantics Aware Segmentation</title>
+
+   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+   <link rel="stylesheet" href="./static/css/bulma.min.css">
+   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+   <link rel="stylesheet" href="./static/css/index.css">
+   <link rel="icon" href="./static/images/favicon.svg">
+   <link rel="stylesheet" href="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.css">
+   <link rel="stylesheet" href="css/app.css">
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <script src="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script defer src="./static/js/fontawesome.all.min.js"></script>
+   <script src="./static/js/bulma-carousel.min.js"></script>
+   <script src="./static/js/bulma-slider.min.js"></script>
+   <script src="./static/js/index.js"></script>
+   <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<!-- <body>
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div class="navbar-menu">
+          <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+            <a class="navbar-item" href="https://keunhong.com">
+            <span class="icon">
+                <i class="fas fa-home"></i>
+            </span>
+            </a>
+      
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                More Research
+              </a>
+              <div class="navbar-dropdown">
+                <a class="navbar-item" href="https://hypernerf.github.io">
+                  HyperNeRF
+                </a>
+                <a class="navbar-item" href="https://nerfies.github.io">
+                  Nerfies
+                </a>
+                <a class="navbar-item" href="https://latentfusion.github.io">
+                  LatentFusion
+                </a>
+                <a class="navbar-item" href="https://photoshape.github.io">
+                  PhotoShape
+                </a>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+      </nav> -->
+<section class="hero">
+   <div class="hero-body">
+      <div class="container is-max-desktop">
+         <div class="columns is-centered">
+            <div class="column has-text-centered">
+               <h1 class="title is-1 publication-title" , style="color:purple;">U-SAM:</h1>
+               <h1 class="title is-4 publication-title">Repurposing SAM for User-Defined Semantics Aware Segmentation</h1>
+               <div class="is-size-5 publication-authors">
+                  <span class="author-block">
+                     <a href="https://rohit-kundu.github.io/">Rohit Kundu</a><sup>1</sup>,</span>
+                  <span class="author-block">
+                     <a href="https://spaul007.github.io/">Sudipta Paul</a><sup>2,</sup>*,</span>
+                  <span class="author-block">
+                     <a href="https://www.linkedin.com/in/arindam-dutta-a07451292/">Arindam Dutta</a><sup>1</sup>,</span>
+                  <span class="author-block">
+                     <a href="https://vcg.ece.ucr.edu/amit">Amit K. Roy-Chowdhury</a><sup>1</sup></span>
+                  </span>
+               </div>
+               <div class="is-size-5 publication-authors">
+                  <span class="author-block"><sup>1</sup>University of California, Riverside</span>,
+                  <span class="author-block"><sup>2</sup>Samsung Research America</span>
+               </div>
+               <div class="column has-text-centered publication-authors">
+                  <span class="author-block">*Work done while at UCR</span>
+               </div>
+                   <div class="is-size-5 column has-text-centered">
+                     <a href="https://cvpr.thecvf.com/Conferences/2025"><b>CVPR 2025</b> 3<sup>rd</sup> MMFM Workshop</a>
+                     </span>
+                     </div>
+               <div class="column has-text-centered">
+                  <div class="publication-links">
+                     <!-- PDF Link. -->
+                     <span class="link-block">
+                        <a target="_blank" href="https://arxiv.org/pdf/2312.02420v2"
+                           class="external-link button is-normal is-rounded is-dark">
+                           <span class="icon">
+                              <i class="fas fa-file-pdf"></i>
+                           </span>
+                           <span>Paper (PDF)</span>
+                        </a>
+                     </span>
+                     <span class="link-block">
+                        <a target="_blank" href="https://arxiv.org/pdf/2312.02420v2"
+                           class="external-link button is-normal is-rounded is-dark">
+                           <span class="icon">
+                              <i class="ai ai-arxiv"></i>
+                           </span>
+                           <span>arXiv</span>
+                        </a>
+                     </span>
+                     <!-- Video Link.
+                     <span class="link-block">
+                        <a href="https://www.youtube.com/watch?v=k7xFbELpnv4"
+                           class="external-link button is-normal is-rounded is-dark">
+                           <span class="icon">
+                              <i class="fab fa-youtube"></i>
+                           </span>
+                           <span>Video (YouTube)</span>
+                        </a>
+                     </span> -->
+
+                     <!-- Dataset Link. -->
+                     <!-- <span class="link-block">
+                        <a href="https://github.com/subhadeepkoley/PictureThatSketch/blob/a73141e51e396294f183c709b8b4ef55b55be05d/static/images/cvpr_4656_poster.png?raw=true"
+                           class="external-link button is-normal is-rounded is-dark">
+                           <span class="icon">
+                              <i class="far fa-images"></i>
+                           </span>
+                           <span>Poster</span>
+                        </a> -->
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<section class="hero teaser">
+   <div class="container is-max-desktop">
+      <div class="hero-body">
+         <img class="round center-image" style="width:700px;" src="static/images/Problem Formulation.png" />
+         <h2 class="subtitle has-text-justified">
+            <span class="dnerf"></span> <b>Problem Overview</b>: We propose a novel and flexible pipeline, U-SAM, to tackle the challenging problem of generating pixel-level semantic annotations for user-specified object classes without any manual supervision. Given only a set of object class names, U-SAM can produce accurate semantic segmentation masks on any user-provided image data. By enhancing SAM with semantic region recognition capabilities and leveraging synthetic images generated by Stable Diffusion or web crawled images for the desired object classes, our approach addresses a highly complex segmentation problem with robust generalization.
+         </h2>
+      </div>
+   </div>
+</section>
+
+<section class="section">
+   <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+         <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+                The Segment Anything Model (SAM) excels at generating precise object masks from input prompts but lacks semantic awareness, failing to associate its generated masks with specific object categories.  To address this limitation, we propose U-SAM, a novel framework that imbibes semantic awareness into SAM, enabling it to generate targeted masks for user-specified object categories. Given only object class names as input from the user, U-SAM provides pixel-level semantic annotations for images without requiring any labeled/unlabeled samples from the test data distribution. Our approach leverages synthetically generated or web crawled images to accumulate semantic information about the desired object classes. We then learn a mapping function between SAM's mask embeddings and object class labels, effectively enhancing SAM with granularity-specific semantic recognition capabilities. As a result, users can obtain meaningful and targeted segmentation masks for specific objects they request, rather than generic and unlabeled masks. We evaluate U-SAM on PASCAL VOC 2012 and MSCOCO-80, achieving significant mIoU improvements of +17.95% and +5.20%, respectively, over state-of-the-art methods. By transforming SAM into a semantically aware segmentation model, U-SAM offers a practical and flexible solution for pixel-level annotation across diverse and unseen domains in a resource-constrained environment.
+               </p>
+            </div>
+         </div>
+      </div>
+      <!--/ Abstract. -->
+      
+      <!-- Method. -->
+      <section class="section">
+         <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+               <div class="column is-four-fifths">
+                  <h2 class="title is-3">Method</h2>
+               </div>
+            </div>
+         </div>
+         <div class="hero-body">
+             <img class="round center-image" style="width:1000px;" src="./static/images/overall.png" alt="overall" />
+         </div>
+         <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+              <div class="column is-four-fifths">
+                <div class="content has-text-justified">
+                    <p class="subtitle has-text-justified">
+                       <span class="dnerf"></span>Given the list of user-defined target categories <span class="math">\(\mathcal{C}\)</span>, we use Stable Diffusion to generate a synthetic single-object image dataset which is encoded by SAM's image encoder and a uniformly spaced grid of <span class="math">\(\mathbf{d}\)</span> points are generated across the image to prompt SAM. The image and point embeddings are passed into a transformer decoder, the output mask embeddings <span class="math">\(\mathbf{m}_i\)</span> (here, <span class="math">\(\mathbf{m}_i \in \mathbb{R}^{d \times 1024}\)</span>, corresponding to the <span class="math">\(\mathbf{d}\)</span> masks predicted by SAM) of which are used to train a classifier head <span class="math">\(\theta\)</span> to predict objects using a Multiple Instance Learning (MIL) setup and uncertainty losses.
+                    </p>
+                    &nbsp;
+                </div>
+              </div>
+            </div>
+         </div>
+      </section>
+      <!--/ Method. -->
+
+      <section class="hero">
+         <div class="hero-body">
+            <div class="container is-max-desktop">
+               <!-- Abstract. -->
+               <div class="columns is-centered has-text-centered">
+                  <div class="column is-four-fifths">
+                     <h2 class="title is-3">Results</h2>
+                     <div class="content has-text-justified">
+                        <center>
+                           <img src="static/images/qualitative_results.png" alt="qualitative_results" border=0 height=200 width=1500 />
+                        </center>
+                        <p class="subtitle has-text-justified">
+                            <b><u>Qualitative Results:</u></b>The original image, the ground truth (GT) mask, all of the SAM generated masks overlayed on top of each other, and U-SAM predicted masks are shown respectively in the four columns. For the GT mask and U-SAM predicted masks, the colors indicate the class labels, while random colors were used for the SAM masks since it does not provide class-labels.
+                           <br>
+                           <br>
+
+                        <center>
+                            <img src="static/images/granularity_change.png" alt="granularity-specific" border=0 height=150
+                                width=1500 />
+                        </center>
+                           <p class="subtitle has-text-justified">
+                            <b><u>Qualitative results with changed granularity:</u></b> The third column shows the U-SAM predictions on PASCAL classes, and the fourth column shows the predictions when the granularity level has been changed to categorize 
+                            <span style="font-style: italic;">"dog"</span>, <span style="font-style: italic;">"cat"</span>, and <span style="font-style: italic;">"sheep"</span> classes as a single 
+                            <span style="font-style: italic;">"animals"</span> class. The colors represent the different class labels: 
+                            <span style="color: brown;">Brown</span>: <span style="font-style: italic;">"sheep"</span>, 
+                            <span style="color: rgb(130, 10, 229);">Violet</span>: <span style="font-style: italic;">"dog"</span>, 
+                            <span style="color: olive;">Dark Brown</span>: <span style="font-style: italic;">"cat"</span>, 
+                            <span style="color: red;">Red</span>: <span style="font-style: italic;">"animals"</span>, 
+                            <span style="color: pink;">Pink</span>: <span style="font-style: italic;">"person"</span>. 
+                            <b><i>GC</i></b>: Granularity Changed.
+                              <br>
+                              <br>
+                        
+                        <center>
+                           <img src="static/images/quantitative_results.png" alt="quant_results" border=0 height=200 width=1500 />
+                        </center>
+                        <p class="subtitle has-text-centered">
+                            <b><u>Quantitative Results</u></b> obtained by U-SAM.
+                           <br>
+                           <br>
+
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <section class="section" id="BibTeX">
+               <div class="container is-max-desktop content">
+                  <h2 class="title">BibTeX</h2>
+                  <pre><code>@inproceedings{kundu2025repurposing,
+    title={Repurposing SAM for User-Defined Semantics Aware Segmentation},
+    author={Kundu, Rohit and Paul, Sudipta and Dutta, Arindam and Roy-Chowdhury, Amit K.},
+    booktitle={CVPR workshops},
+    year={2025}
+}</code></pre>
+               </div>
+            </section>
+            <script>
+               const viewers = document.querySelectorAll(".image-compare");
+               viewers.forEach((element) => {
+                  let view = new ImageCompare(element, {
+                     hoverStart: true,
+                     addCircle: true
+                  }).mount();
+               });
+
+               $(document).ready(function () {
+                  var editor = CodeMirror.fromTextArea(document.getElementById("bibtex"), {
+                     lineNumbers: false,
+                     lineWrapping: true,
+                     readOnly: true
+                  });
+                  $(function () {
+                     $('[data-toggle="tooltip"]').tooltip()
+                  })
+               });
+            </script>
+            <br>
+
+            <p style="text-align:center"> <img
+                  src="https://badges.toozhao.com/badges/01HTTX5CCFCP5V35WK5JYTW63R/green.svg" /> </a></p>
+
+            <p style="text-align:center"> Copyright: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"> CC
+                  BY-NC-SA 4.0</a> © Rohit Kundu | Last updated: 05 April 2025 | Website credits to  <a
+                  href="https://nerfies.github.io/"> Nerfies</a></a></p>
+            </body>
+
+</html>
